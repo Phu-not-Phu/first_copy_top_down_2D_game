@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwb4b54yqcvse"]
+[gd_scene load_steps=8 format=3 uid="uid://dwb4b54yqcvse"]
 
 [ext_resource type="PackedScene" uid="uid://hfc8wgnrf8gb" path="res://src/scenes/player.tscn" id="1_d21uf"]
 [ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/colored-transparent_packed.png" id="1_fbtdy"]
 [ext_resource type="Script" path="res://src/scripts/world.cs" id="1_gp51s"]
+[ext_resource type="AudioStream" uid="uid://b31mo4ut1xfqr" path="res://src/assets/music_background.mp3" id="4_x85jq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtr3q"]
 texture = ExtResource("1_fbtdy")
@@ -5474,5 +5475,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
+
+[node name="MusicBackground" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_x85jq")
+autoplay = true
 
 [connection signal="HealthDelepted" from="Player" to="." method="OnPlayerHealthDelepted"]

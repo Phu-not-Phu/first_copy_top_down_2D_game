@@ -5,11 +5,14 @@ public partial class gun : Area2D
 {
     static Marker2D shootingPoint;
     AnimatedSprite2D sprite;
+    AudioStreamPlayer2D gunSFX;
 
     public override void _Ready()
     {
         shootingPoint = GetNode<Marker2D>("%ShootingPoint");
         sprite = GetNode<AnimatedSprite2D>("WeaponPivot/AnimatedSprite2D");
+        gunSFX = GetNode<AudioStreamPlayer2D>("Gun_SFX");
+
         Timer timer = GetNode<Timer>("Timer");
         timer.Timeout += () => Shoot();
     }
@@ -21,10 +24,7 @@ public partial class gun : Area2D
         {
             var target_enemy = enemies_in_range[0];
             LookAt(target_enemy.GlobalPosition);
-
-            GD.Print("enemy position: " + target_enemy.GlobalPosition.X); 
-            GD.Print("gun position: " + GlobalPosition.X);
-
+            
             if(target_enemy.GlobalPosition.X < GlobalPosition.X)
             {
                 sprite.FlipV = true;
@@ -36,8 +36,10 @@ public partial class gun : Area2D
         }
     }
 
-    public static void Shoot()
+    public void Shoot()
     {
+        gunSFX.Play();
+
         PackedScene bullet = ResourceLoader.Load<PackedScene>("res://src/scenes/bullet.tscn");
         var new_bullet = (Node2D)bullet.Instantiate();
 

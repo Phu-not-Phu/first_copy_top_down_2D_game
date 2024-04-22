@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://53slfau6o33r"]
+[gd_scene load_steps=7 format=3 uid="uid://53slfau6o33r"]
 
 [ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/colored-transparent_packed.png" id="1_3su1q"]
 [ext_resource type="Script" path="res://src/scripts/gun.cs" id="1_h7h60"]
+[ext_resource type="AudioStream" uid="uid://cb0ukd0ls68dk" path="res://src/assets/gun_sfx.mp3" id="3_snlkl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vv4t"]
 radius = 200.0
@@ -37,10 +38,15 @@ sprite_frames = SubResource("SpriteFrames_jfi8m")
 
 [node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/AnimatedSprite2D"]
 unique_name_in_owner = true
-position = Vector2(5, -2)
+position = Vector2(6, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="Gun_SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_snlkl")
+volume_db = -10.0
+pitch_scale = 1.32
 
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
