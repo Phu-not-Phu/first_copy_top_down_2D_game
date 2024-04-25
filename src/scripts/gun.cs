@@ -12,27 +12,25 @@ public partial class gun : Area2D
         shootingPoint = GetNode<Marker2D>("%ShootingPoint");
         sprite = GetNode<AnimatedSprite2D>("WeaponPivot/AnimatedSprite2D");
         gunSFX = GetNode<AudioStreamPlayer2D>("Gun_SFX");
-
-        Timer timer = GetNode<Timer>("Timer");
-        timer.Timeout += () => Shoot();
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        var enemies_in_range = GetOverlappingBodies();
-        if (enemies_in_range.Count > 0)
+        var mouse_pos = GetGlobalMousePosition();
+        LookAt(mouse_pos);
+
+        if (Input.IsActionJustPressed("shoot"))
         {
-            var target_enemy = enemies_in_range[0];
-            LookAt(target_enemy.GlobalPosition);
-            
-            if(target_enemy.GlobalPosition.X < GlobalPosition.X)
-            {
-                sprite.FlipV = true;
-            }
-            else
-            {
-                sprite.FlipV = false;
-            }
+            Shoot();
+        }
+
+        if (mouse_pos.X < GlobalPosition.X)
+        {
+            sprite.FlipV = true;
+        }
+        else
+        {
+            sprite.FlipV = false;
         }
     }
 

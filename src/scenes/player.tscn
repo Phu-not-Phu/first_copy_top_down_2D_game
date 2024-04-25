@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hfc8wgnrf8gb"]
+[gd_scene load_steps=16 format=3 uid="uid://hfc8wgnrf8gb"]
 
 [ext_resource type="Script" path="res://src/scripts/player.cs" id="1_lu5i5"]
 [ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/colored-transparent_packed.png" id="2_2km68"]
@@ -91,6 +91,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="ImageTexture" id="ImageTexture_arb18"]
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_lu5i5")
@@ -135,3 +137,6 @@ theme_override_styles/background = SubResource("StyleBoxFlat_gp6rp")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qm7rs")
 value = 100.0
 show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ImageTexture_arb18")
