@@ -19,7 +19,7 @@ public partial class gun : Area2D
         var mouse_pos = GetGlobalMousePosition();
         LookAt(mouse_pos);
 
-        if (Input.IsActionJustPressed("shoot"))
+        if (Input.IsActionPressed("shoot"))
         {
             Shoot();
         }
