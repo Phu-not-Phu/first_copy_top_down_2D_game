@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://53slfau6o33r"]
 
-[ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/colored-transparent_packed.png" id="1_3su1q"]
+[ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/png/colored-transparent_packed.png" id="1_3su1q"]
 [ext_resource type="Script" path="res://src/scripts/gun.cs" id="1_h7h60"]
-[ext_resource type="AudioStream" uid="uid://cb0ukd0ls68dk" path="res://src/assets/gun_sfx.mp3" id="3_snlkl"]
+[ext_resource type="AudioStream" uid="uid://cb0ukd0ls68dk" path="res://src/assets/sfx/gun_sfx.mp3" id="3_snlkl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vv4t"]
 radius = 200.0

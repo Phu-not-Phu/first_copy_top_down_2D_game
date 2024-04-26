@@ -13,11 +13,20 @@ config_version=5
 config/name="2D 1 bit top-down"
 run/main_scene="res://src/scenes/world.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
-config/icon="res://src/assets/icon.svg"
+config/icon="res://src/assets/png/icon.svg"
 
 [dotnet]
 
 project/assembly_name="2D 1 bit Platformer"
+
+[file_customization]
+
+folder_colors={
+"res://src/assets/": "orange",
+"res://src/resources/": "purple",
+"res://src/scenes/": "green",
+"res://src/scripts/": "blue"
+}
 
 [input]
 
