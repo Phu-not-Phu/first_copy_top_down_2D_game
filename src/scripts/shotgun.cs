@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class gun : Area2D
+public partial class shotgun : Area2D
 {
 	static Marker2D shootingPoint;
 	AnimatedSprite2D sprite;

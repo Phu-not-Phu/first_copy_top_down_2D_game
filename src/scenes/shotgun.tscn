@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://53slfau6o33r"]
 
-[ext_resource type="Script" path="res://src/scripts/shotgun.cs" id="1_h2rcm"]
+[ext_resource type="Script" path="res://src/scripts/shotgun.cs" id="1_a2hk7"]
 [ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/png/colored-transparent_packed.png" id="2_qht7b"]
 [ext_resource type="AudioStream" uid="uid://cb0ukd0ls68dk" path="res://src/assets/sfx/gun_sfx.mp3" id="3_3eigf"]
 
@@ -128,7 +128,7 @@ _data = {
 [node name="ShotGun" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
-script = ExtResource("1_h2rcm")
+script = ExtResource("1_a2hk7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7vv4t")
