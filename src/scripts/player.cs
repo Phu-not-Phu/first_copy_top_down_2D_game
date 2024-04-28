@@ -18,6 +18,8 @@ public partial class player : CharacterBody2D
 		animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		hurtbox = GetNode<Area2D>("Hurtbox");
 		healthBar = GetNode<ProgressBar>("HealthBar");
+
+		animPlayer.Play("idle");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -32,7 +34,7 @@ public partial class player : CharacterBody2D
 		}
 		else
 		{
-			animPlayer.Play("RESET");
+			animPlayer.Play("idle");
 		}
 
 		Velocity = velocity;
