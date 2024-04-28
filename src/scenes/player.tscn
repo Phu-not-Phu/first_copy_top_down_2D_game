@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scripts/player.cs" id="1_lu5i5"]
 [ext_resource type="Texture2D" uid="uid://gne6yfolg5ga" path="res://src/assets/png/colored-transparent_packed.png" id="2_2km68"]
-[ext_resource type="PackedScene" uid="uid://53slfau6o33r" path="res://src/scenes/gun.tscn" id="3_w2wfn"]
+[ext_resource type="PackedScene" uid="uid://53slfau6o33r" path="res://src/scenes/shotgun.tscn" id="3_w2wfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scmd5"]
 atlas = ExtResource("2_2km68")
@@ -116,7 +116,7 @@ libraries = {
 "": SubResource("AnimationLibrary_win4o")
 }
 
-[node name="Gun" parent="." instance=ExtResource("3_w2wfn")]
+[node name="ShotGun" parent="." instance=ExtResource("3_w2wfn")]
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 0
