@@ -5418,10 +5418,12 @@ script = ExtResource("1_gp51s")
 layer = -1
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
-offset_right = 1161.0
-offset_bottom = 664.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)
@@ -5447,6 +5449,7 @@ curve = SubResource("Curve2D_q8ub5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1282, 756)
 rotation = -1.56371
 
@@ -5479,8 +5482,9 @@ text = "Game Over"
 
 [node name="MusicBackground" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_x85jq")
-autoplay = true
 
 [node name="MouseCursor" parent="." instance=ExtResource("5_nr54l")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [connection signal="HealthDelepted" from="Player" to="." method="OnPlayerHealthDelepted"]

@@ -15,6 +15,10 @@ run/main_scene="res://src/scenes/menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://src/assets/png/icon.svg"
 
+[display]
+
+window/main_scene="res://src/scenes/menu.tscn"
+
 [dotnet]
 
 project/assembly_name="2D 1 bit Platformer"
